@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caesar Cipher</title>
+    <title>Vigenère Cipher</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -35,32 +35,32 @@
 </head>
 <body>
     <div class="container">
-        <h2>CAESAR CIPHER</h2>
-        
+        <h2>VIGENÈRE CIPHER</h2>
+
         <h4 class="text-primary">ENCRYPTION</h4>
-        <form method="POST" action="/encrypt">
+        <form method="POST" action="/encrypt_vigenere">
             <div class="mb-3">
                 <label class="form-label">Plain text:</label>
                 <input type="text" class="form-control" name="inputPlainText" placeholder="Input Plain Text" required autofocus/>
             </div>
             <div class="mb-3">
                 <label class="form-label">Key:</label>
-                <input type="number" class="form-control" name="inputKeyPlain" placeholder="Input Key" required/>
+                <input type="text" class="form-control" name="inputKeyPlain" placeholder="Input Key" required/>
             </div>
             <button type="submit" class="btn btn-primary">Encrypt</button>
         </form>
-        
+
         <hr>
-        
+
         <h4 class="text-primary">DECRYPTION</h4>
-        <form method="POST" action="/decrypt">
+        <form method="POST" action="/decrypt_vigenere">
             <div class="mb-3">
                 <label class="form-label">Cipher text:</label>
                 <input type="text" class="form-control" name="inputCipherText" placeholder="Input Cipher Text" required/>
             </div>
             <div class="mb-3">
                 <label class="form-label">Key:</label>
-                <input type="number" class="form-control" name="inputKeyCipher" placeholder="Input Key" required/>
+                <input type="text" class="form-control" name="inputKeyCipher" placeholder="Input Key" required/>
             </div>
             <button type="submit" class="btn btn-primary">Decrypt</button>
         </form>
