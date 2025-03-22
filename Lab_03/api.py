@@ -47,7 +47,7 @@ def rsa_decrypt():
 def rsa_sign_message():
     data = request.json
     message = data['message']
-    private_key, _ = rsa_cipher.load_key()
+    private_key, _ = rsa_cipher.load_keys()
     signature = rsa_cipher.sign(message, private_key)
     signature_hex = signature.hex()
     return jsonify({'signature': signature.hex()})
@@ -57,7 +57,7 @@ def rsa_verify_signature():
     data = request.json
     message = data['message']
     signature_hex = data['signature']
-    public_key, _ = rsa_cipher.load_key()
+    public_key, _ = rsa_cipher.load_keys()
     signature = bytes.fromhex(signature_hex)
     is_verified = rsa_cipher.verify(message, signature, public_key)
     return jsonify({'is_verified': is_verified})
